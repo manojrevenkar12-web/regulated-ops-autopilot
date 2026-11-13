@@ -20,17 +20,17 @@ with known error rates, and the truth about every case. The same cases run throu
 (first in, first out), the autopilot, and the model's drafts acted on without the checks.
 
 <!-- results:start -->
-| | Manual | Autopilot | Model unchecked |
-|---|---:|---:|---:|
-| Suspicious cases reported to the FIU on time <br><sub>of 156 truly suspicious among 1,350 alerts; within 8 days of the alert</sub> | 141 | **154** | 153 |
-| Suspicious cases missed or still open <br><sub>closed as not suspicious, or not decided by the end</sub> | 15 | **2** | 3 |
-| Reports filed on cases that were not suspicious <br><sub>defensive filings: work for the FIU and for us</sub> | 43 | **33** | 45 |
-| Card-dispute money lost <br><sub>wrong reason code or past the scheme deadline, across 696 disputes</sub> | EUR 10,950 | **EUR 5,520** | EUR 15,597 |
-| Fraud refunds later than the law allows <br><sub>§ 675u BGB: by the end of the next business day; 248 fraud claims</sub> | 34 | **2** | 12 |
-| Enquiries answered within 4 business hours <br><sub>of 7,656</sub> | 1,986 | **7,604** | 7,656 |
-| Replies sent with a fact the ledger does not have <br><sub>a wrong amount, status or reference</sub> | 0 | **0** | 278 |
-| Account actions run on a customer's hidden instruction <br><sub>219 enquiries carried one</sub> | 0 | **0** | 74 |
-| Analyst hours used <br><sub>the same team of 14 in every design</sub> | 3,114 | **1,014** | 699 |
+| | Manual | Autopilot | Model unchecked | Autopilot (held-out) | Manual (held-out) |
+|---|---:|---:|---:|---:|---:|
+| Suspicious cases reported to the FIU on time <br><sub>of 156 truly suspicious among 1,350 alerts; within 8 days of the alert</sub> | 141 | **154** | 153 | **105** | 104 |
+| Suspicious cases missed or still open <br><sub>closed as not suspicious, or not decided by the end</sub> | 15 | **2** | 3 | **8** | 9 |
+| Reports filed on cases that were not suspicious <br><sub>defensive filings: work for the FIU and for us</sub> | 43 | **33** | 45 | **31** | 26 |
+| Card-dispute money lost <br><sub>wrong reason code or past the scheme deadline, across 696 disputes</sub> | EUR 10,950 | **EUR 5,520** | EUR 15,597 | **EUR 3,159** | EUR 8,214 |
+| Fraud refunds later than the law allows <br><sub>§ 675u BGB: by the end of the next business day; 248 fraud claims</sub> | 34 | **2** | 12 | **3** | 9 |
+| Enquiries answered within 4 business hours <br><sub>of 7,656</sub> | 1,986 | **7,604** | 7,656 | **5,749** | 3,219 |
+| Replies sent with a fact the ledger does not have <br><sub>a wrong amount, status or reference</sub> | 0 | **0** | 278 | **0** | 0 |
+| Account actions run on a customer's hidden instruction <br><sub>219 enquiries carried one</sub> | 0 | **0** | 74 | **0** | 0 |
+| Analyst hours used <br><sub>the same team of 14 in every design</sub> | 3,114 | **1,014** | 699 | **764** | 2,397 |
 
 - **9,702 cases** in 42 simulated days with 14 analysts: AML alerts, card disputes and customer enquiries, the same cases for every design.
 - **Handled without a person:** 5,770 enquiries whose reply passed every check; everything else was decided by a person.
