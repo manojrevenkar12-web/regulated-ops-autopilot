@@ -46,7 +46,12 @@
       "chain_intact": true
     },
     "caught_by_checks": {},
-    "cases": 9702
+    "cases": 9702,
+    "world": {
+      "days": 42,
+      "analysts": 14,
+      "regulator_sar_days": 8
+    }
   },
   "autopilot": {
     "design": "autopilot",
@@ -106,7 +111,12 @@
       "not-received reason without an expected delivery date that has passed": 3,
       "amount-differs reason without a receipt showing another amount": 3
     },
-    "cases": 9702
+    "cases": 9702,
+    "world": {
+      "days": 42,
+      "analysts": 14,
+      "regulator_sar_days": 8
+    }
   },
   "unchecked": {
     "design": "unchecked",
@@ -154,6 +164,11 @@
       "chain_intact": true
     },
     "caught_by_checks": {},
-    "cases": 9702
+    "cases": 9702,
+    "world": {
+      "days": 42,
+      "analysts": 14,
+      "regulator_sar_days": 8
+    }
   }
 }

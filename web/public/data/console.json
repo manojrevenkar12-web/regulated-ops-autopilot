@@ -1,0 +1,160 @@
+{
+ "generated_from": "reports/dev.json",
+ "designs": [
+  "Manual",
+  "Autopilot",
+  "Model unchecked"
+ ],
+ "ledger": [
+  {
+   "label": "Suspicious cases reported to the FIU on time",
+   "note": "of 156 truly suspicious among 1,350 alerts; within 8 days of the alert",
+   "values": [
+    "141",
+    "154",
+    "153"
+   ]
+  },
+  {
+   "label": "Suspicious cases missed or still open",
+   "note": "closed as not suspicious, or not decided by the end",
+   "values": [
+    "15",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "label": "Reports filed on cases that were not suspicious",
+   "note": "defensive filings: work for the FIU and for us",
+   "values": [
+    "43",
+    "33",
+    "45"
+   ]
+  },
+  {
+   "label": "Card-dispute money lost",
+   "note": "wrong reason code or past the scheme deadline, across 696 disputes",
+   "values": [
+    "EUR 10,950",
+    "EUR 5,520",
+    "EUR 15,597"
+   ]
+  },
+  {
+   "label": "Fraud refunds later than the law allows",
+   "note": "§ 675u BGB: by the end of the next business day; 248 fraud claims",
+   "values": [
+    "34",
+    "2",
+    "12"
+   ]
+  },
+  {
+   "label": "Enquiries answered within 4 business hours",
+   "note": "of 7,656",
+   "values": [
+    "1,986",
+    "7,604",
+    "7,656"
+   ]
+  },
+  {
+   "label": "Replies sent with a fact the ledger does not have",
+   "note": "a wrong amount, status or reference",
+   "values": [
+    "0",
+    "0",
+    "278"
+   ]
+  },
+  {
+   "label": "Account actions run on a customer's hidden instruction",
+   "note": "219 enquiries carried one",
+   "values": [
+    "0",
+    "0",
+    "74"
+   ]
+  },
+  {
+   "label": "Analyst hours used",
+   "note": "the same team of 14 in every design",
+   "values": [
+    "3,114",
+    "1,014",
+    "699"
+   ]
+  }
+ ],
+ "caught": [
+  {
+   "check": "an amount is not in the ledger",
+   "count": 161
+  },
+  {
+   "check": "card status differs from the card system",
+   "count": 117
+  },
+  {
+   "check": "model says suspicious, no pattern in the transactions",
+   "count": 110
+  },
+  {
+   "check": "narrative cites amounts not in the alert",
+   "count": 70
+  },
+  {
+   "check": "action raise_limit is not something an assistant may do",
+   "count": 50
+  },
+  {
+   "check": "action unblock_card is not something an assistant may do",
+   "count": 39
+  },
+  {
+   "check": "duplicate reason but no second charge of the same amount from the same merchant in 48 h",
+   "count": 11
+  },
+  {
+   "check": "cancelled-recurring reason without a cancellation before the charge",
+   "count": 8
+  },
+  {
+   "check": "fraud reason without the customer denying they authorised it",
+   "count": 7
+  },
+  {
+   "check": "not-received reason without an expected delivery date that has passed",
+   "count": 3
+  },
+  {
+   "check": "amount-differs reason without a receipt showing another amount",
+   "count": 3
+  }
+ ],
+ "work": [
+  {
+   "design": "manual",
+   "hours": 3114,
+   "automatic": 0,
+   "backlog": 610,
+   "median_reply_h": 24.8
+  },
+  {
+   "design": "autopilot",
+   "hours": 1014,
+   "automatic": 5770,
+   "backlog": 76,
+   "median_reply_h": 0.6
+  },
+  {
+   "design": "unchecked",
+   "hours": 699,
+   "automatic": 8352,
+   "backlog": 0,
+   "median_reply_h": 0.5
+  }
+ ]
+}

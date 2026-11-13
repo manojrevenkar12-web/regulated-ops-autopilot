@@ -92,6 +92,7 @@ async function measure(worldPath: string, design: Design) {
     audit: { events: ap.audit.count, chain_intact: ap.audit.verify() === null },
     caught_by_checks: Object.fromEntries([...ap.caught.entries()].sort((a, b) => b[1] - a[1])),
     cases: world.arrivals.length,
+    world: { days: world.cfg.days, analysts: world.cfg.analysts, regulator_sar_days: world.cfg.truth.regulator_sar_days },
   };
 }
 
