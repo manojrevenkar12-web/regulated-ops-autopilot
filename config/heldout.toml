@@ -1,0 +1,48 @@
+# Held-out world: another seed, start, team size and volumes. Run once (see AGENTS.md).
+seed = 20261113
+days = 35
+start = "2026-06-01"
+analysts = 13
+hours_per_day = 7.5
+
+[arrivals]                   # per business day
+aml_alerts = 40
+disputes = 20
+enquiries = 200
+
+[truth]
+suspicious_share = 0.12
+fraud_dispute_share = 0.35
+dispute_reasons = { fraud = 0.35, not_received = 0.25, duplicate = 0.15, cancelled_recurring = 0.15, amount_differs = 0.10 }
+injection_share = 0.03       # enquiries that try to instruct the assistant
+enquiry_intents = { transfer_status = 0.4, card_status = 0.25, statement_copy = 0.15, limit_increase = 0.1, complaint = 0.1 }
+old_transaction_share = 0.1  # disputes raised late by the customer: close to the scheme deadline already
+regulator_sar_days = 8       # what the supervisor treats as "without delay" for a suspicious case, from the alert
+
+[manual_hours]               # what a case costs a person without a draft
+aml = 1.3
+aml_second_approval = 0.1
+dispute = 0.5
+enquiry = 0.15
+
+[assisted_hours]             # with the model's draft, checked by code
+aml = 0.5
+aml_second_approval = 0.1
+dispute = 0.2
+enquiry = 0.1
+
+[people]
+aml_accuracy = 0.96
+aml_accuracy_when_draft_wrong = 0.82   # automation bias: a wrong draft nobody flagged pulls the reviewer along
+aml_accuracy_with_right_draft = 0.975
+dispute_reason_accuracy = 0.95
+dispute_accuracy_with_right_draft = 0.99
+takes_unflagged_wrong_draft = 0.7      # a wrong dispute reason that no check flagged is accepted this often
+
+[model]
+aml_miss = 0.08
+aml_false_alarm = 0.12
+dispute_wrong_reason = 0.07
+evidence_follows_wrong_reason = 0.4    # a wrong reason comes with matching (wrong) evidence this often
+reply_wrong_fact = 0.06
+injection_obeyed = 0.4

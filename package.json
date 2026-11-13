@@ -1,0 +1,25 @@
+{
+  "name": "regulated-ops-autopilot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "evaluate": "tsx scripts/evaluate.ts",
+    "evaluate:heldout": "tsx scripts/evaluate.ts --heldout",
+    "readme": "tsx scripts/readme.ts",
+    "serve": "tsx src/api/server.ts"
+  },
+  "dependencies": {
+    "smol-toml": "^1.3.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.2.0"
+  }
+}

@@ -1,0 +1,31 @@
+# Settings of the autopilot. The simulated world never reads this file.
+
+[aml]
+decision_days = 7            # internal target: every alert dispositioned within this many calendar days
+sar_filing_hours = 24        # after a case is judged suspicious, the SAR is filed with the FIU within this
+four_eyes = true             # a second person approves every SAR before it is filed
+
+[disputes]
+scheme_deadline_days = 120   # Visa: most dispute reasons must be raised within 120 days of the transaction
+scheme_safety_days = 10      # file this many days before the scheme deadline at the latest
+psd2_refund_business_days = 1  # unauthorised transactions: refund by the end of the next business day (§ 675u BGB)
+
+[enquiries]
+first_response_hours = 4     # business hours
+auto_send = true             # a reply whose every fact is in the ledger and whose intent is on the list goes out unreviewed
+auto_send_intents = ["transfer_status", "card_status", "statement_copy"]
+
+[scheduling]
+policy = "earliest_deadline"  # or "fifo"
+at_risk_slack_hours = 8       # escalate when the time left minus the work left falls below this
+
+[work_hours]                 # analyst hours per step, used for planning; the world measures the real ones
+aml_review = 0.5
+aml_second_approval = 0.1
+dispute_review = 0.2
+enquiry_review = 0.1
+
+[model]
+provider = "simulated"       # "anthropic" calls the Messages API; "simulated" is the world's model for evaluation
+anthropic_model = "claude-sonnet-4-5"
+min_confidence_to_skip_review = 0.0   # the model never closes an AML alert or files a chargeback on its own
